@@ -1,0 +1,54 @@
+buildscript {
+
+    ext.kotlin_version = '1.1.0-rc-91'
+
+    repositories {
+        jcenter()
+        maven { setUrl("http://dl.bintray.com/kotlin/kotlin-eap-1.1") }
+    }
+
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-noarg:$kotlin_version")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:$kotlin_version")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
+    }
+}
+
+subprojects {
+
+    group = "br.com.gersonkm.swkata"
+    version = "0.0.1-SNAPSHOT"
+
+    apply {
+        plugin("kotlin")
+    }
+
+    setSourceCompatibility(1.8)
+    setTargetCompatibility(1.8)
+
+    repositories {
+        mavenCentral()
+        maven { setUrl("http://dl.bintray.com/kotlin/kotlin-eap-1.1") }
+        maven { setUrl("https://jitpack.io") }
+    }
+
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    }
+
+    dependencies {
+        compile("org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version")
+        compile("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
+
+        compile("org.threeten:threeten-extra:1.0")
+        compile("org.apache.commons:commons-lang3:3.4")
+        compile("org.apache.commons:commons-collections4:4.1")
+
+        compile("com.google.guava:guava:21.0")
+
+        testCompile("junit:junit:4.12")
+        testCompile("org.assertj:assertj-core:3.6.2")
+        testCompile("org.assertj:assertj-guava:3.1.0")
+    }
+
+}

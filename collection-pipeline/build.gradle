@@ -1,0 +1,3 @@
+dependencies {
+    compile ("com.github.gersonkm.sw-kata:collection-pipeline:-SNAPSHOT") { changing = true }
+}
