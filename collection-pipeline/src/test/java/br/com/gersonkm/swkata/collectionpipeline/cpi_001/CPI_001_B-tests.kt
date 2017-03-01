@@ -2,6 +2,7 @@
 
 package br.com.gersonkm.swkata.collectionpipeline.cpi_001
 
+import org.assertj.core.api.Assertions.*
 import org.junit.Test
 
 abstract class CPI_001_B_Tests(val SUT: CPI_001_B) {
