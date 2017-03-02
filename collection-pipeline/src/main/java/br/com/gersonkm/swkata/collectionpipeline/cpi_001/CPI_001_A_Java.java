@@ -5,12 +5,13 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class CPI_001_A_Java implements CPI_001_A {
 
     @NotNull @Override
     public Map<String, String> solve(@NotNull List<Livro> livros) {
-        throw new NotImplementedException("TODO");
+        return livros.stream()
+                .collect(Collectors.toMap(Livro::getIsbn, Livro::getTitulo));
     }
-
 }
