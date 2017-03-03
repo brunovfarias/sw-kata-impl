@@ -9,7 +9,7 @@ import java.time.LocalDate
 abstract class CPI_001_C_Tests(val SUT: CPI_001_C) {
 
     @Test
-    fun `teste #1 - give me a better name, please!`() {
+    fun `Conversao de lista para Map ordenado por id`() {
         val livro1 = Livro(6, "9780132350884", "A Handbook of Agile Software Craftsmanship", LocalDate.of(2008,8,11),listOf("Ernesto"))
         val livro2 = Livro(9, "9780321349606", "Java Concurrency in Practice", LocalDate.of(2006,5,19),listOf("Ernesto"))
         val livro3 = Livro(5, "9780131177055", "Working Effectively with Legacy Code", LocalDate.of(2004,10,2),listOf("Ernesto"))

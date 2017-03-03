@@ -9,7 +9,7 @@ import java.time.LocalDate
 abstract class CPI_001_A_Tests(val SUT: CPI_001_A) {
 
     @Test
-    fun `teste #1 - give me a better name, please!`() {
+    fun `Conversao de lista para Map`() {
        var result =  SUT.solve(listOf(
                 Livro(1, "9780132350884", "A Handbook of Agile Software Craftsmanship", LocalDate.of(2017,1,1),listOf("Ernesto")),
                 Livro(1, "9780321349606", "Java Concurrency in Practice", LocalDate.of(2017,1,1),listOf("Ernesto")),
