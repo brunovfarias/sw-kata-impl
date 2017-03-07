@@ -10,5 +10,4 @@ class DAT_001_A_Kotlin : DAT_001_A {
     override fun solve(data: LocalDate, semanas: Weeks, dias: Days, forcaDiaUtil: Boolean, diaUtilPadrao: DayOfWeek): LocalDate {
         TODO("not implemented")
     }
-
 }
