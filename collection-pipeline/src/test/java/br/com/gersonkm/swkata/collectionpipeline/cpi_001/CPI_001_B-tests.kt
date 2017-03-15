@@ -10,20 +10,21 @@ abstract class CPI_001_B_Tests(val SUT: CPI_001_B) {
 
     @Test
     fun `Conversao de lista para map ordenada por data de publicação`() {
-        val livro1 = Livro(1, "9780132350884", "A Handbook of Agile Software Craftsmanship", LocalDate.of(2008,8,11),listOf("Ernesto"))
-        val livro2 = Livro(2, "9780321349606", "Java Concurrency in Practice", LocalDate.of(2006,5,19),listOf("Ernesto"))
-        val livro3 = Livro(3, "9780131177055", "Working Effectively with Legacy Code", LocalDate.of(2004,10,2),listOf("Ernesto"))
-        val livro4 = Livro(4, "9780201485677", "Refactoring: Improving the Design of Existing Code", LocalDate.of(1999,7,8),listOf("Ernesto"))
-        val livro5 = Livro(5, "9780321356680", "Effective Java (2nd Edition)", LocalDate.of(2008,5,28),listOf("Ernesto"))
+        val livro1 = newLivro(isbn = "111", dataPublicacao =  LocalDate.of(1999,7,8))
+        val livro2 = newLivro(isbn = "222", dataPublicacao =  LocalDate.of(2004,10,2))
+        val livro3 = newLivro(isbn = "333", dataPublicacao =  LocalDate.of(2006,5,19))
+        val livro4 = newLivro(isbn = "444", dataPublicacao =  LocalDate.of(2008,5,28))
+        val livro5 = newLivro(isbn = "555", dataPublicacao =  LocalDate.of(2008,8,11))
+
 
         var result =  SUT.solve(listOf(livro5,livro2,livro3,livro4,livro1))
 
         assertThat(result).containsExactly(
-                entry("9780201485677",livro4),
-                entry("9780131177055",livro3),
-                entry("9780321349606",livro2),
-                entry("9780321356680",livro5),
-                entry("9780132350884",livro1)
+                entry("111",livro1),
+                entry("222",livro2),
+                entry("333",livro3),
+                entry("444",livro4),
+                entry("555",livro5)
         )
     }
 }

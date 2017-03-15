@@ -1,6 +1,5 @@
 package br.com.gersonkm.swkata.collectionpipeline.cpi_001;
 
-import org.apache.commons.lang3.NotImplementedException;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

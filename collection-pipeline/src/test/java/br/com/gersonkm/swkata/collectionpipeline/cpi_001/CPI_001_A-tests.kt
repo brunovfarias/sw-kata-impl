@@ -11,19 +11,20 @@ abstract class CPI_001_A_Tests(val SUT: CPI_001_A) {
     @Test
     fun `Conversao de lista para Map`() {
        var result =  SUT.solve(listOf(
-                Livro(1, "9780132350884", "A Handbook of Agile Software Craftsmanship", LocalDate.of(2017,1,1),listOf("Ernesto")),
-                Livro(1, "9780321349606", "Java Concurrency in Practice", LocalDate.of(2017,1,1),listOf("Ernesto")),
-                Livro(1, "9780131177055", "Working Effectively with Legacy Code", LocalDate.of(2017,1,1),listOf("Ernesto")),
-                Livro(1, "9780201485677", "Refactoring: Improving the Design of Existing Code", LocalDate.of(2017,1,1),listOf("Ernesto")),
-                Livro(1, "9780321356680", "Effective Java (2nd Edition)", LocalDate.of(2017,1,1),listOf("Ernesto"))
+               newLivro(isbn="111111",titulo = "t1"),
+               newLivro(isbn="222222",titulo = "t2"),
+               newLivro(isbn="333333",titulo = "t3"),
+               newLivro(isbn="444444",titulo = "t4"),
+               newLivro(isbn="555555",titulo = "t5"),
+               newLivro(isbn="666666",titulo = "t6")
         ))
 
-        assertThat(result).containsAllEntriesOf(mapOf(
-                "9780132350884" to "A Handbook of Agile Software Craftsmanship",
-                "9780321349606" to "Java Concurrency in Practice",
-                "9780131177055" to "Working Effectively with Legacy Code",
-                "9780201485677" to "Refactoring: Improving the Design of Existing Code",
-                "9780321356680" to "Effective Java (2nd Edition)"
+        assertThat(result).containsAllEntriesOf(
+                mapOf(  "111111" to "t1"
+                        ,"222222" to "t2"
+                        ,"333333" to "t3"
+                        ,"444444" to "t4"
+                        ,"555555" to "t5"
         ))
     }
 }
