@@ -7,14 +7,15 @@ import java.time.YearMonth
 class DAT_002_A_Kotlin : DAT_002_A {
 
     override fun solve(monthInterval: Range<YearMonth>): List<LocalDate> {
-        val dataIncial = monthInterval.lowerEndpoint().atDay(1);
+        val dataInicial = monthInterval.lowerEndpoint().atDay(1);
         val dataFinal = monthInterval.upperEndpoint().atEndOfMonth();
+        val lista = ArrayList<LocalDate>();
 
-//        for(date in dataIncial..dataFinal){
-//
-//        }
-
-        TODO("not implemented")
+        var date = dataInicial
+        while (date.isBefore(dataFinal.plusDays(1))) {
+            lista.add(date)
+            date = date.plusDays(1)
+        }
+        return lista;
     }
-
 }

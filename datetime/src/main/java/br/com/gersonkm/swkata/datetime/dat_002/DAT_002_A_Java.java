@@ -16,9 +16,10 @@ public class DAT_002_A_Java implements DAT_002_A {
         LocalDate dataFinal = monthInterval.upperEndpoint().atEndOfMonth();
         ArrayList<LocalDate> lista = new ArrayList<>();
 
-        for (LocalDate date = dataInicial; date.isBefore(dataFinal); date = date.plusDays(1)) {
+        for (LocalDate date = dataInicial; date.isBefore(dataFinal.plusDays(1)); date = date.plusDays(1)) {
             lista.add(date);
         }
+
 
         return lista;
     }
